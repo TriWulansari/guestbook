@@ -20,7 +20,7 @@ class GuestFactory extends Factory
     public function definition(): array
     {
         $dateTime = $this->faker->dateTimeBetween('1 month ago', 'now');
-        
+
         return [
             'fullname' => $this->faker->name(),
             'institution_id' => $this->faker->numberBetween(1, 3),
@@ -30,7 +30,7 @@ class GuestFactory extends Factory
                 'SMK N 1purbalingga',
                 'SMK N 1 Rembang'
             ]),
-            'phonenumber' => $this->faker->numerify('##########'),
+            'phonenumber' => '+62'.$this->faker->numerify('##########'),
             'email' => $this->faker->unique()->safeEmail(),
             'note' => $this->faker->sentence(),
             'created_at' => $dateTime,
